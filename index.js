@@ -29,7 +29,7 @@ import { Client, GatewayIntentBits, Routes } from 'discord.js';
 import { REST } from '@discordjs/rest';
 import OrderCommand from './commands/order.js';
 import rolesCommand from './commands/roles.js'
-import mongoose from 'mongoose';
+import { connectToDatabase } from './database.js';
 
 
 
@@ -38,7 +38,6 @@ config();
 const TOKEN = process.env.BOT_TOKEN;
 const CLIENT_ID = process.env.CLIENT_ID;
 const GUILD_ID = process.env.guild_id;
-const DatabaseAddress = process.env.MONGOOSE_ID;
 
 
 const client = new Client({ 
@@ -51,36 +50,21 @@ const client = new Client({
 
 const rest = new REST({ version: '10' }).setToken(TOKEN)
 
-// Define an asynchronous function to connect to the database
-async function connectToDatabase() {
-    try {
-      await mongoose.connect(DatabaseAddress, {
-        
-      });
-  
-      console.log('Connected to the database!');
-    } catch (error) {
-      console.error('Database connection error:', error);
-    }
-  }
-  
-  // Call the async function to connect to the database
-  connectToDatabase();
-
 client.login(TOKEN);
-client.on("ready", () => {
+client.on("ready", async () => {
     console.log(`Logged in as ${client.user.tag}`)
+    await connectToDatabase();
 })
 
-client.on('interactionCreate', (interaction) => {
-    if (interaction.isChatInputCommand()) {
-        const food = interaction.options.get("food").value;
-        const drink = interaction.options.get("drink").value;
-        interaction.reply({
-            content: `You ordered a ${food} and ${drink}`,
-    });
-    }
-});
+// client.on('interactionCreate', (interaction) => {
+//     if (interaction.isChatInputCommand()) {
+//         const food = interaction.options.get("food").value;
+//         const drink = interaction.options.get("drink").value;
+//         interaction.reply({
+//             content: `You ordered a ${food} and ${drink}`,
+//     });
+//     }
+// });
 
 async function main() {
 
