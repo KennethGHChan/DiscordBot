@@ -22,7 +22,7 @@
 
 // cIuOgsmFR8rdaIic
 
-//
+// testing
 
 import { config } from 'dotenv';
 import { Client, GatewayIntentBits, Routes } from 'discord.js';
