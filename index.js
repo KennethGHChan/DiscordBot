@@ -1,28 +1,3 @@
-// const Discord = require("discord.js")
-
-// const TOKEN = "MTEwMDY2MTA2NTQxNjcyMDM4NA.G4HwVt.aD6m7oi1wRAAzj9_ScS5Y_pQ3tTJG6fJH-kAgE";
-
-// const client = new Discord.Client({
-//     intents: ["Guilds", "GuildMessages"]
-// });
-
-// client.on("ready", () => {
-//     console.log(`Logged in as ${client.user.tag}`)
-// });
-
-// client.on("messageCreate", (message) => {
-//     if (message.content == "hi") {
-//         message.reply("Hello World")
-//     }
-// })
-
-// client.login(TOKEN);
-
-// MTEwMDY2MTA2NTQxNjcyMDM4NA.G4HwVt.aD6m7oi1wRAAzj9_ScS5Y_pQ3tTJG6fJH-kAgE
-
-// cIuOgsmFR8rdaIic
-
-// testing
 
 import { config } from 'dotenv';
 import { Client, GatewayIntentBits, Routes } from 'discord.js';
@@ -31,6 +6,7 @@ import OrderCommand from './commands/order.js';
 import rolesCommand from './commands/roles.js'
 import { connectToDatabase } from './database.js';
 
+// npm run start:dev
 
 
 config();
@@ -85,8 +61,6 @@ main()
 
 
 
-
-// npm run start:dev
 
 
 
