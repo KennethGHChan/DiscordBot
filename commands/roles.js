@@ -1,9 +1,9 @@
 import { SlashCommandBuilder } from '@discordjs/builders';
 
 const rolesCommand = new SlashCommandBuilder()
-    .setName('add role')
+    .setName('addrole')
     .setDescription('Add a role')
-    .addRoleOption((option) => option.setName('new role')
+    .addRoleOption((option) => option.setName('newrole')
     .setDescription('Adds the New Role')
     );
     
