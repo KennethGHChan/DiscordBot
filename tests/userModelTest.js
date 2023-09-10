@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import { connectToDatabase } from '../database.js'; // Import your database connection function
 import { createUserID, getUserID, updateUserID, deleteUserID } from '../Controller/userController.js';
 
-// Rest of your code...
+// Testing the CRUD operations that were created
 
 // Configure Chai
 chai.use(chaiHttp);

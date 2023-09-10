@@ -1,7 +1,7 @@
 import userModel from '../Models/userModel.js';
 
 
-// Creating crud operations
+// Importing the userModel from Models/userModels.js abd creating basic crud operations
 
 // Create
 
