@@ -3,7 +3,7 @@ import userModel from '../Models/userModel.js';
 
 // Importing the userModel from Models/userModels.js abd creating basic crud operations
 
-// Create
+// Create (,save)
 
 export const createUserID = async (userData) => {
     try {
@@ -15,7 +15,7 @@ export const createUserID = async (userData) => {
     }
 }
 
-// Retrieve
+// Retrieve (.findOne)
 
 export const getUserID = async (userID) => {
     try {
@@ -26,7 +26,7 @@ export const getUserID = async (userID) => {
     }
 }
 
-// Update
+// Update (findOneAndUpdate)
 
 export const updateUserID = async (userID, newData) => {
     try {
@@ -37,7 +37,7 @@ export const updateUserID = async (userID, newData) => {
     }
 } 
 
-// Delete
+// Delete (findOneAndDelete)
 
 export const deleteUserID = async (userID) => {
     try {

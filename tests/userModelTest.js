@@ -6,6 +6,8 @@ import { createUserID, getUserID, updateUserID, deleteUserID } from '../Controll
 
 // Testing the CRUD operations that were created
 
+// npx mocha tests 
+
 // Configure Chai
 chai.use(chaiHttp);
 const expect = chai.expect;
