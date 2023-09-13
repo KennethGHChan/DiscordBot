@@ -1,4 +1,5 @@
-import userModel from '../Models/userModel.js';
+import userModel from '../models/userModel.js';
+
 
 
 // Importing the userModel from Models/userModels.js abd creating basic crud operations

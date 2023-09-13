@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import userSchema from '../Schemas/user.js'
+import userSchema from '../src/Schemas/user.js'
 
 
 // Created userModel based off of userSchema from Schemas/user.js

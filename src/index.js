@@ -1,9 +1,9 @@
 import { config } from 'dotenv';
 import { Client, GatewayIntentBits, Routes } from 'discord.js';
 import { REST } from '@discordjs/rest';
-import OrderCommand from './commands/order.js';
+import uploadCommand from './commands/upload.js';
 import rolesCommand from './commands/roles.js'
-import { connectToDatabase } from './database.js';
+import { connectToDatabase } from './Database/database.js';
 
 // npm run start:dev
 
@@ -52,7 +52,7 @@ client.on("ready", async () => {
 
 async function main() {
 
-    const commands = [OrderCommand, rolesCommand];
+    const commands = [uploadCommand, rolesCommand];
         
 
     try {

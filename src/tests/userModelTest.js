@@ -1,7 +1,7 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import mongoose from 'mongoose';
-import { connectToDatabase } from '../database.js'; // Import your database connection function
+import { connectToDatabase } from '../Database/database.js'; // Import your database connection function
 import { createUserID, getUserID, updateUserID, deleteUserID } from '../Controller/userController.js';
 
 // Testing the CRUD operations that were created

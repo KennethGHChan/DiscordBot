@@ -1,4 +1,5 @@
-import userModel from '../Models/fileModel.js';
+import fileModel from '../Models/fileModel.js';
+
 
 // Importing the fileModel from Models/fileModels.js abd creating basic crud operations
 
@@ -32,9 +33,20 @@ export const retrieveFile = async (fileData ) => {
 
 export const updateFile = async (fileData, newFileData) => {
     try {
-        const updatedFile = await model.findOneAndUpdate(fileData, newFileData, { new: true });
+        const updatedFile = await fileModel.findOneAndUpdate(fileData, newFileData, { new: true });
         return updatedFile;
     } catch (error) {
         throw new Error("Error updating file: " + error.message);
     }
 };
+
+// Delete (findOneAndDelete)
+
+export const deleteFile = async (fileData) => {
+    try {
+        const file = await fileModel.findOneAndDelete ( fileData );
+        return file;
+    } catch (error) {
+        throw new Error("Error deleting file:  " + error.message);
+    }
+}
